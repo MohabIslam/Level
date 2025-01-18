@@ -1,375 +1,415 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+:root {
+    /* COLORS */
+    --color-primary: #ee5057;
+    --color-secondary: #111;
+    --color-text: #898989;
+    --color-light: #f4f4f4;
 
-    <link rel="stylesheet" href="./assets/CSS/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    /* FONTS */
+    --font-primary: 'Open Sans', Helvetica, Arial, sans-serif;
+    --font-bold: 700;
+    --font-light: 400;
+    --font-size-text: 13px;
+    --font-size-title: 20px;
+    --font-size-section-title: 48px;
+
+    /* SIZE */
+    --size-primary: 25px;
+    --size-double: calc(var(--size-primary) * 2);
+    --size-half: calc(var(--size-primary) / 2);
+
+    --margin-primary: var(--size-primary);
+    --padding-primary: var(--size-primary);
+    --padding-double: var(--size-double);
+    --padding-half: var(--size-half);
+    --height-primary: 120px;
+
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media (min-width: 768px){
+    .navbar {
+        height: var(--height-primary);
+    }
     
-    <link rel="stylesheet" href="./assets/CSS/style.css">
-    <title>Level</title>
-</head>
-<body>
+    .navbar .level-nav-link.nav-link {
+        padding: var(--padding-double) var(--padding-primary);
+    }
+}
 
-  <!--MAIN MENU-->
-
-  <nav id="mainNavbar" class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="./assets/img/logo.png" alt="Site Logo" class="logo-img">
-        <span class="logo-text">Level</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#search">SEARCH</a></li>
-          <li class="nav-item"><a class="nav-link" href="#Services">SERVICES</a></li>
-          <li class="nav-item"><a class="nav-link" href="#recommends">Recommended</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+/* General Navbar Styling */
+#mainNavbar {
+    transition: all 0.3s ease-in-out;
+  }
   
-  <!--SEARCH FORM-->
-
-<div id="search" class="hero">
-  <div class="container">
-    <form action="index.html" method="get" class="search-form">
-      
-      <div class="form-group" style="flex: 100%;">
-        <i class="fa fa-map-marker"></i>
-        <input type="text" name="city" class="form-control" placeholder="Type Your Destination">
-      </div>
-      
-      <div class="form-group">
-        <i class="fa fa-calendar"></i>
-        <input type="text" class="form-control" id="inputCheckIn" placeholder="Check In">
-      </div>
-    
-      <div class="form-group">
-        <i class="fa fa-calendar"></i>
-        <input type="text" class="form-control" id="inputCheckOut" placeholder="Check Out">
-      </div>
-    
- 
-
-      <div class="form-group">
-        <i class="fa fa-bed"></i>
-       <select class="form-control">
-        <option value="">Rooms</option>
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-        <option value="">4</option>
-        <option value="">5</option>
-        <option value="">6</option>
-        <option value="">7</option>
-        <option value="">8</option>
-        <option value="">9</option>
-        <option value="">10</option>
-       </select>
-      </div>
-      
-      <div class="form-group">
-        <i class="fa fa-user"></i>
-       <select class="form-control">
-        <option value="">Adults</option>
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-        <option value="">4</option>
-        <option value="">5</option>
-        <option value="">6</option>
-        <option value="">7</option>
-        <option value="">8</option>
-        <option value="">9</option>
-        <option value="">10</option>
-       </select>
-      </div>
-
-      
-          <div class="form-group">
-        <i class="fa fa-user"></i>
-       <select class="form-control">
-        <option value="">Children</option>
-        <option value="">1</option>
-        <option value="">2</option>
-        <option value="">3</option>
-        <option value="">4</option>
-        <option value="">5</option>
-        <option value="">6</option>
-        <option value="">7</option>
-        <option value="">8</option>
-        <option value="">9</option>
-        <option value="">10</option>
-       </select>
-      </div>
-      
-      
-      <div class="form-group">
-    <button type="submit" class="btn btn-primary"> Check</button>
-      </div>
-
-
-      <p class="need-help">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, blanditiis!
-        <a href="#">Need Help?</a>
-      </p>
-    </form>
-
-   
-  </div>
-</div>
-
-  <!--SUBSCRIBE-->
-
-  <section class="section-color">
-    <div class="container text-center">
-    <h2 class="section-title"> We are here to help you? </h2>
-    <p class="sectoin-subtitle">Subscribe to get our NewLettrs</p>
-
-    <a href="#" class="btn btn-white"> Subscribe NewLettrs</a>
-
-    </div>
-  </section>
+  /* Sticky Navbar Styling */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+  }
   
-  <!--SERVICES-->
-
-  <section id="Services">
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="section-down-arrow">
-
-      <polygon fill="var(--color-primary)" points="0,0 100,0 50,50"></polygon> 
-    </svg>
-
-    <div class="container">
-      <div class="row">
-        
-        <article class="article col-lg-4">
-          <i class="fa fa-legal article-icon"></i>
-          <h3 class="article-title">Level HTML Template by Tooplate website</h3>
-          <p> You are allowed to download , edit and use this template for your business or client website</p>
-          <a href="#" class="btn btn-primary btn-fit">Continue reading</a>
-        </article>
-
-        <article class="article col-lg-4">
-          <i class="fa fa-plane article-icon"></i>
-          <h3 class="article-title">Original Website Template Producer</h3>
-          <p> You are NOT Allowed to re-distribute the downloadable template ZIP file on any website. </p>
-          <a href="#" class="btn btn-primary btn-fit">Continue reading</a>
-        </article>
-
-        <article class="article col-lg-4">
-          <i class="fa fa-meetup article-icon"></i>
-          <h3 class="article-title"> Contact US if you have any question</h3>
-          <p> If you see this template being distruted on any other site , that is illega copy.</p>
-          <a href="" class="btn btn-primary btn-fit">Continue reading</a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!--SLIDER-->
-  <section id="recommends" class="section-gray">
-<div class="container">
-<div class="row">
+  .sticky .nav-link {
+    color: #fff;
+  }
   
-  <div class="col-lg-8">
-    <div class="level-slider">
+  .sticky .navbar-brand .logo-text {
+    color: var(--color-primary); /* Futuristic neon color */
+    text-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
+  }
   
-      <article class="level-slider-item">
-        <img src="./assets/img/img-01.jpg" alt="Beautiful Landscape">
-        <div class="level-slider-item-container">
-          <h3>Explore Stunning Landscapes</h3>
-          <p>Discover breathtaking views and serene environments perfect for your next adventure.</p>
-          <a href="#" class="btn btn-primary btn-fit">Get More Info</a>
-        </div>
-      </article>
+  .sticky .logo-img {
+    height: 40px; /* Adjust logo size for sticky state */
+    transition: height 0.3s;
+  }
   
-      <article class="level-slider-item">
-        <img src="./assets/img/img-02.jpg" alt="Modern Architecture">
-        <div class="level-slider-item-container">
-          <h3>Experience Modern Architecture</h3>
-          <p>Immerse yourself in the beauty of contemporary design and innovative structures.</p>
-          <a href="#" class="btn btn-primary btn-fit">View Details</a>
-        </div>
-      </article>
+  /* Logo Styling */
+  .navbar-brand .logo-img {
+    height: 50px; /* Default logo size */
+    transition: height 0.3s;
+  }
   
-      <article class="level-slider-item">
-        <img src="./assets/img/img-01.jpg" alt="Nature's Wonders">
-        <div class="level-slider-item-container">
-          <h3>Uncover Nature's Wonders</h3>
-          <p>Join us for a journey to some of the most awe-inspiring natural destinations.</p>
-          <a href="#" class="btn btn-primary btn-fit">View Details</a>
-        </div>
-      </article>
+  .navbar-brand .logo-text {
+    font-size: 1.5rem;
+    color: #000;
+    transition: color 0.3s;
+  }
   
-      <article class="level-slider-item">
-        <img src="./assets/img/img-02.jpg" alt="Cultural Heritage">
-        <div class="level-slider-item-container">
-          <h3>Dive Into Cultural Heritage</h3>
-          <p>Learn about rich traditions and historical landmarks from around the globe.</p>
-          <a href="#" class="btn btn-primary btn-fit">View Details</a>
-        </div>
-      </article>
+  /* Glow Effect */
+  .navbar-nav .nav-link:hover {
+    color: #ff0;
+    text-shadow: 0 0 10px #ff0, 0 0 20px #ff0;
+  }
   
-      <article class="level-slider-item">
-        <img src="./assets/img/img-01.jpg" alt="Adventure Awaits">
-        <div class="level-slider-item-container">
-          <h3>Your Next Adventure Awaits</h3>
-          <p>Get ready for thrilling activities and unique experiences tailored just for you.</p>
-          <a href="#" class="btn btn-primary btn-fit">Get More Info</a>
-        </div>
-      </article>
+  /* Fade-In Animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   
-      <article class="level-slider-item">
-        <img src="./assets/img/img-02.jpg" alt="Relax and Unwind">
-        <div class="level-slider-item-container">
-          <h3>Relax and Unwind</h3>
-          <p>Escape the hustle and bustle with our curated retreats designed for ultimate relaxation.</p>
-          <a href="#" class="btn btn-primary btn-fit">Get More Info</a>
-        </div>
-      </article>
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   
-    </div>
-  </div>
+  .navbar-nav .nav-link:hover {
+    color: #ff0; /* Neon hover effect */
+    text-shadow: 0 0 10px #ff0, 0 0 20px #ff0;
+  }
+  
   
 
-  <div class="col-lg-4">
+.navbar .level-nav-link.nav-link {
+    padding-right: var(--padding-primary);
+    padding-left: var(--padding-primary);
+}
 
-    <div class="star-places">
+.navbar .level-nav-link.nav-link.active,
+.navbar .level-nav-link.nav-link:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
 
-      <div class="star-places-header">
-        <h3>Recommended Places</h3>
-        <p>Places that we recommend for you </p>
-      </div>
-
-      <div class="star-places-body">
-        <a href="#">
-          <img src="./assets/img/tn-img-01.jpg" alt="place imge">
-          <h4>Europ</h4>
-        </a>
-
-        <a href="#">
-          <img src="./assets/img/tn-img-02.jpg" alt="place imge">
-          <h4>Asia</h4>
-        </a>
-        
-        <a href="#">
-          <img src="./assets/img/tn-img-03.jpg" alt="place imge">
-          <h4>Africa</h4>
-        </a>  
-
-        <a href="#">
-          <img src="./assets/img/tn-img-04.jpg" alt="place imge">
-          <h4>America</h4>
-        </a>
-      </div> 
-
-    </div>
-
-  </div>
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-brand h1 {margin: 0}
 
 
-</div>
-
-</div>
-  </section>
-
-<!--VIDIO-->
-<section class="video">
-  <div class="video-overlay">
-    <!-- <i class="fa fa-play-circle video-control-play"></i>
-    <i class="fa fa-pause-circle video-control-pause"></i> -->
-  </div>
-  <div class="video-container">
-    <video class="level-video" autoplay loop muted>
-      <source src="./assets/videos/video.mp4" type="video/mp4">
-      <source src="./assets/videos/video.ogg" type="video/ogg">
-      Your Browser does not support the video tag.
-    </video>
-  </div>
-</section>
-
-<!--CONTACT-->
-<section id="contact">
-  <div class="container">
-
-<div class="row">
-  <div class="col-lg-6">
-
-<div class="map-container">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130856.29176956738!2d31.66095159495266!3d30.226619646245524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14581ab73d4ca47d%3A0x89e1c92d1d007f67!2z2YXYr9mK2YbYqSDYp9mE2LnYqNmI2LHYjCDYp9mE2LnYqNmI2LHYjCDZhdit2KfZgdi42Kkg2KfZhNmC2YTZitmI2KjZitip!5e1!3m2!1sar!2seg!4v1737222751116!5m2!1sar!2seg"
- width="100%" 
- height="100%" 
- style="border:0;" 
- allowfullscreen="" 
- loading="lazy" 
- referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-</div>
-
-    </div>
-  <div class="col-lg-6">
-
-    <form action="" class="contact-form">
-      <div class="form-group">
-        <input type="text" name="" id="" class="form-control" required placeholder="Name">
-        <i class="fa fa-user"></i>
-      </div>
-
-      <div class="form-group">
-        <input type="email" name="" id="" class="form-control" required placeholder="Email">
-        <i class="fa fa-envelope"></i>
-      </div>
-
-      <div class="form-group">
-        <input type="text" name="" id="" class="form-control" required placeholder="Subject">
-        <i class="fa fa-book"></i>
-      </div>
-
-      <div class="form-group">
-       <textarea type="text" name="" id="" class="form-control" placeholder="Message" required rows="9" > </textarea>
-        <i class="fa fa-commenting"></i>
-      </div>
-      
-      <button type="submit" class="btn btn-primary">Send Message Now</button>
-
-    </form>
-  </div>
-</div>
-
-  </div>
-</section>
-
-<!--FOOTER-->
-
-<footer class="footer">
-  <div class="container">
-    <p>Copyright &copy; 2025 ENG-Mohab Islam -Design- DR.Nour Homsi❤️</p>
-  </div>
-</footer>
+.hero {
+    background: url(../img/bg-img-1.jpg) no-repeat center center /cover;
+    height: 515px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
-  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+.search-form {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--size-half);
+    padding: var(--padding-primary) var(--padding-double);
+}
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
+.form-group {
+    flex: 1 25%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
-  <script src="./assets/js/script.js"></script>
+.form-group .form-control {
+    border-radius: 0;
+    padding: var(--padding-half);
+    padding-left: var(--padding-double);
+}
 
-</body>
-</html>
+.form-group i {
+    color: var(--color-primary);
+    font-size: var(--font-size-title);
+    position: absolute;
+    left: var(--size-half);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    padding: var(--padding-half);
+    text-transform: uppercase;
+    font-weight: var(--font-bold);
+}
+.btn-primary:hover {
+    background-color: #c3343d;
+}
+
+
+.need-help {
+    background-color: white;
+    font-size: .8rem;
+    padding: 0 var(--padding-double) var(--padding-half);
+}
+
+
+
+section {
+  padding: var(--padding-double) 0;
+  position: relative;
+}
+
+.section-color {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.section-title {font-size: var(--font-size-section-title)}
+.section-subtitle {font-size: var(--font-size-title)}
+
+.btn-white {
+    border: 2px solid white;
+    color: inherit;
+    padding: var(--padding-half) var(--padding-primary);
+}
+.btn-white:hover {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+
+/* SERVICES */
+.section-down-arrow {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--height-primary);
+}
+
+.article {
+    text-align: center;
+    color: var(--color-primary);
+    margin-top: var(--size-double);
+    padding: var(--padding-primary);
+    transition: all .2s ease-in;
+}
+
+.article:hover {
+    scale: 1.1;
+    box-shadow: 0 0 7px 0 var(--color-text);
+}
+
+.article .article-icon {
+    font-size: 4rem;
+    margin-bottom: var(--size-primary);
+}
+
+.btn-fit {
+    width: max-content;
+}
+
+
+
+/* SLIDER */
+.section-gray {
+    background-color: var(--color-light);
+}
+
+
+
+.level-slider-item {
+    background-color: white;
+    margin-right: 12px;
+}
+
+.level-slider img {
+    width: 100%;
+}
+
+.level-slider-item-container {
+    padding: var(--padding-primary);
+}
+
+.level-slider-item h3 {
+    font-size: var(--font-size-title);
+    color: var(--color-primary);
+}
+
+.level-slider-item p {
+    font-size: var(--font-size-text);
+    color: var(--color-text);
+}
+
+
+
+
+/* STAR PLACES  */
+.star-places {
+    background-color: white;
+}
+
+.star-places-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--padding-half);
+}
+
+.star-places-header h3 {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-light);
+}
+
+.star-places-header p {
+    font-size: var(--font-size-text);
+    margin: 0;
+}
+
+.star-places-body {
+    padding: var(--padding-primary);
+}
+
+.star-places-body a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--size-primary);
+    background-color: var(--color-light);
+    margin-bottom: var(--size-half);
+    color: var(--color-secondary);
+    transition: all .2s ease-in;
+}
+
+.star-places-body a:hover {
+    background-color: #c1c1c1;
+}
+
+.star-places-body h4 {
+    font-size: var(--font-size-title);
+    text-transform: uppercase;
+}
+
+
+
+/* VIDEO */
+
+.video-overlay {
+    position: absolute;
+    background-color: rgb(0 0 0 / 50%);
+    width: 100%;
+    height: 515px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-control-play,
+.video-control-pause {
+    color: white;
+    font-size: var(--font-size-section-title);
+    cursor: pointer;
+}
+
+.video-control-pause {
+    display: none;
+}
+
+
+.video-container {
+    overflow: hidden;
+    width: 100%;
+    height: 515px;
+    position: relative;
+}
+
+.video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* CONTACT */
+.contact-form {
+    margin: 0 auto;
+}
+
+.contact-form .form-control {
+    background-color: var(--color-light);
+    border: none;
+    margin-bottom: var(--size-half);
+}
+
+.contact-form .form-group i {
+    top: var(--size-half);
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: var(--size-half);
+}
+
+
+/* FOOTER */
+.footer {
+    background-color: var(--color-secondary);
+}
+
+.footer p {
+    padding: var(--padding-primary) 0;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}
